@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../../assets/login.png";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
   const [error, setError] = useState(null);
-  const [isShow, setIsShow] = useState(false);
+    const [isShow, setIsShow] = useState(false);
+    
+    const { createUser,} = useContext(AuthContext);
 
   const handleCreateUser = (e) => {
     e.preventDefault();
@@ -14,6 +19,8 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+      console.log(name, email, password);
+      
     setError("");
 
     if (password.length < 6) {
@@ -25,8 +32,38 @@ const Register = () => {
     } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
       setError("Password at least one special character");
       return;
-      }
-      
+    }
+
+    createUser(email, password)
+          .then(result => {
+              const users = result.user;
+              toast.success('🦄 Register Create successFully!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+              console.log(users);
+          })
+          .catch(err => {
+              const errMsg = err.message;
+              toast.error(errMsg,'🦄 Wow so easy!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
+              console.log(errMsg);
+        })
+
       
   };
 
@@ -111,9 +148,21 @@ const Register = () => {
               </p>
             </div>
           </div>
-        </div>
-        {/* <ToastContainer /> */}
-      </div>
+              </div>
+              
+          </div>
+          <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          ></ToastContainer>
     </div>
   );
 };
