@@ -1,7 +1,11 @@
+import AllBrandNames from "../../Components/AllBrandNames/AllBrandNames";
+import Banner from "../../Components/Banner/Banner";
+
 const Home = () => {
     return (
-        <div className="p-5">
-            <h1>Home Comig.....</h1>
+        <div className="">
+            <Banner></Banner>
+            <AllBrandNames/>
         </div>
     );
 };

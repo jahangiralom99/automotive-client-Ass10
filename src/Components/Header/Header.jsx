@@ -1,7 +1,32 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/osley- (2)_prev_ui.png";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Header = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.info('Logged Out!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
   const navLinks = (
     <>
       <li>
@@ -73,9 +98,44 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 font-bold">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-link">
+          {
+            !user ?<button className="btn btn-link">
             <Link to="/login">Login</Link>
-          </button>
+            </button> :
+              <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                    <button onClick={handleLogOut}
+                    className="btn btn-link"
+                    >Logout</button>
+                </li>
+              </ul>
+            </div>
+          }
+          
           {/* <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -108,6 +168,7 @@ const Header = () => {
           </div> */}
         </div>
       </div>
+      
     </div>
   );
 };

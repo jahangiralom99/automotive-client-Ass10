@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 const PrivetRoute = ({ children }) => {
    
-    const { user, loader } = useContext(AuthContext);
+    const { user,  loading } = useContext(AuthContext);
 
     const location = useLocation();
 
-    if (loader) {
+    if ( loading) {
         return <h1 className="text-5xl font-bold flex h-screen items-center justify-center"><span className="loading loading-spinner text-error w-40"></span></h1>
     }
 

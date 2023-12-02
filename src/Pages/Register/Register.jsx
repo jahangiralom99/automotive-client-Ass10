@@ -1,26 +1,26 @@
 import { useContext, useState } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/login.png";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [error, setError] = useState(null);
     const [isShow, setIsShow] = useState(false);
     
     const { createUser,} = useContext(AuthContext);
+  const navi = useNavigate()
+  const location = useLocation()
 
   const handleCreateUser = (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
+    // const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-
-      console.log(name, email, password);
-      
+    
     setError("");
 
     if (password.length < 6) {
@@ -47,7 +47,8 @@ const Register = () => {
                 progress: undefined,
                 theme: "light",
               });
-              console.log(users);
+            console.log(users);
+              navi(location?.state ? location.state : "/");
           })
           .catch(err => {
               const errMsg = err.message;
@@ -61,7 +62,6 @@ const Register = () => {
                 progress: undefined,
                 theme: "colored",
               });
-              console.log(errMsg);
         })
 
       
@@ -151,18 +151,6 @@ const Register = () => {
               </div>
               
           </div>
-          <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-          ></ToastContainer>
     </div>
   );
 };
