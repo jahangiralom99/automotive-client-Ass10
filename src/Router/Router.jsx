@@ -6,6 +6,12 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivetRoute from "./PrivetRoute";
+import BMW from "../Pages/BMW/BMW";
+import Toyota from "../Pages/Toyota/Toyota";
+import Tesla from "../Pages/Tesla/Tesla";
+import Ford from "../Pages/Ford/Ford";
+import MercedesBenz from "../Pages/MercedesBenz/MercedesBenz";
+import Lamborghini from "../Pages/Lamborghini/Lamborghini";
 
 
 const Router = createBrowserRouter([
@@ -16,6 +22,36 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+            },
+            {
+                path: '/BMW',
+                element: <BMW></BMW>,
+                loader: () => fetch('http://localhost:3000/cars')
+            },
+            {
+                path: '/toyota',
+                element: <Toyota></Toyota>,
+                loader: () => fetch('http://localhost:3000/cars')
+            },
+            {
+                path: '/tesla',
+                element: <Tesla></Tesla>,
+                loader: () => fetch('http://localhost:3000/cars')
+            },
+            {
+                path: '/ford',
+                element: <Ford></Ford>,
+                loader: () => fetch('http://localhost:3000/cars')
+            },
+            {
+                path: '/mercedes',
+                element: <MercedesBenz></MercedesBenz>,
+                loader: () => fetch('http://localhost:3000/cars')
+            },
+            {
+                path: '/lamborghini',
+                element: <Lamborghini></Lamborghini>,
+                loader: () => fetch('http://localhost:3000/cars')
             },
             {
                 path: '/addProducts',

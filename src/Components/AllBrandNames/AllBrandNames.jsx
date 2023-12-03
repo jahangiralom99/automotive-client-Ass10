@@ -1,10 +1,39 @@
+import { useNavigate } from "react-router-dom";
+
 const AllBrandNames = () => {
+
+  const navigate = useNavigate()
+
+  const handleBMW = () => {
+    navigate('/BMW')
+  }
+
+  const handleToyota = () => {
+    navigate('/toyota')
+  }
+
+  const handleTesla = () => {
+    navigate("/tesla")
+  }
+
+  const handleFord = () => {
+    navigate("/ford")
+  }
+
+  const handleMercedes = () => {
+    navigate("/mercedes") 
+  }
+
+  const handleLamborghini = () => {
+    navigate("/lamborghini")
+  }
+
   return (
     <div data-aos="zoom-in">
       <h1 className="text-4xl font-bold">All Brand Name</h1>
       <div className="">
         <div className="grid  md:grid-cols-2 items-center justify-items-center mt-12 gap-10">
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleBMW} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%] "
@@ -18,7 +47,7 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleToyota} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -32,7 +61,7 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleTesla} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -46,7 +75,7 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleFord} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -60,7 +89,7 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleMercedes} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -74,12 +103,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
-          <div className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div onClick={handleLamborghini} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
                 src="https://i.ibb.co/YWFj9BQ/shreesha-bhat-t-UP0h-RN2-Aoo-unsplash.jpg"
-                alt="Shoes"
+                alt="Lamborghini"
               />
             </figure>
             <div className="card-body">
