@@ -33,11 +33,12 @@ const AllBrandNames = () => {
       <h1 className="text-4xl font-bold">All Brand Name</h1>
       <div className="">
         <div className="grid  md:grid-cols-2 items-center justify-items-center mt-12 gap-10">
+          {/* 1 number */}
           <div onClick={handleBMW} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%] "
-                src="https://i.ibb.co/N98wVYv/bmwlogo.jpg"
+                src="https://i.postimg.cc/50JbmHKK/bmwlogo-500.webp"
                 alt="bmw"
               />
             </figure>
@@ -47,11 +48,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
+          {/* 2 nd */}
           <div onClick={handleToyota} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
-                src="https://i.ibb.co/42GqG2V/toyota.jpg"
+                src="https://i.postimg.cc/kgVb0ZM3/toyota-500.webp"
                 alt="toyota"
               />
             </figure>
@@ -61,11 +63,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
+          {/* 3rd */}
           <div onClick={handleTesla} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
-                src="https://i.ibb.co/yYqSKs0/tesla.jpg"
+                src="https://i.postimg.cc/jj6PcF4H/tesla-500.webp"
                 alt="tesla"
               />
             </figure>
@@ -75,11 +78,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
+          {/* 4th */}
           <div onClick={handleFord} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
-                src="https://i.ibb.co/jTywgN5/Ford.jpg"
+                src="https://i.postimg.cc/26C3SXY5/Ford-450.webp"
                 alt="Ford"
               />
             </figure>
@@ -89,11 +93,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
+          {/* 5th */}
           <div onClick={handleMercedes} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
-                src="https://i.ibb.co/wwgpQ4w/mercedes.jpg"
+                src="https://i.postimg.cc/K8J0f4cc/mercedes-450.webp"
                 alt="mercedes"
               />
             </figure>
@@ -103,11 +108,12 @@ const AllBrandNames = () => {
               </div>
             </div>
           </div>
+          {/* 6th */}
           <div onClick={handleLamborghini} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
-                src="https://i.ibb.co/YWFj9BQ/shreesha-bhat-t-UP0h-RN2-Aoo-unsplash.jpg"
+                src="https://i.postimg.cc/ZRhvyxkW/lambor-500.webp"
                 alt="Lamborghini"
               />
             </figure>

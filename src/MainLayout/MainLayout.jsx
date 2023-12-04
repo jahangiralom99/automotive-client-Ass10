@@ -11,7 +11,10 @@ const MainLayout = () => {
   const [hide, setHide] = useState(true);
 
   return (
-    <div data-theme={`${hide ? "light" : "dark"}`} className=" ">
+    <div
+      data-theme={`${hide ? "light" : "dark"}`}
+      className="max-w-screen-xl mx-auto"
+    >
       <Header></Header>
       <div
         className="flex justify-end mr-6 mt-5 mb-4 sticky top-6 z-10"
