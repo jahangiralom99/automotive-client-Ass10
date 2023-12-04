@@ -45,7 +45,7 @@ const MyCart = () => {
       <div className="mt-8 flex flex-wrap gap-10 items-center justify-center">
         {loadData.map((cart, idx) => (
           <div key={idx}>
-            <div className="card bg-base-100 shadow-lg">
+            <div data-aos="slide-up" className="card bg-base-100 shadow-lg">
               <figure>
                 <img className="w-96 h-52" src={cart?.car.photo} alt="Shoes" />
               </figure>

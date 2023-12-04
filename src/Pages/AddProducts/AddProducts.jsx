@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AddProducts = () => {
@@ -151,6 +152,7 @@ const AddProducts = () => {
             className="font-bold text-red-500 btn btn-outline w-full"
           />
         </form>
+       <Link to="/" className="font-bold mt-3 text-red-500 btn btn-outline w-full">Go Home</Link>
       </div>
     </div>
   );

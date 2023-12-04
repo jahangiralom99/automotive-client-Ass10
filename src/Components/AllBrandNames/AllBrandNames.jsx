@@ -31,7 +31,7 @@ const AllBrandNames = () => {
   return (
     <div data-aos="zoom-in">
       <h1 className="text-4xl font-bold">All Brand Name</h1>
-      <div className="">
+      <div data-aos="slide-up" className="">
         <div className="grid  md:grid-cols-2 items-center justify-items-center mt-12 gap-10">
           {/* 1 number */}
           <div onClick={handleBMW} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
@@ -49,7 +49,7 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 2 nd */}
-          <div onClick={handleToyota} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div data-aos="slide-up" onClick={handleToyota} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -64,7 +64,7 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 3rd */}
-          <div onClick={handleTesla} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div data-aos="slide-up" onClick={handleTesla} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -79,7 +79,7 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 4th */}
-          <div onClick={handleFord} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div data-aos="slide-up" onClick={handleFord} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -94,7 +94,7 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 5th */}
-          <div onClick={handleMercedes} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div data-aos="slide-up" onClick={handleMercedes} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
@@ -109,7 +109,7 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 6th */}
-          <div onClick={handleLamborghini} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div data-aos="slide-up" onClick={handleLamborghini} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 className="w-[100%]"
