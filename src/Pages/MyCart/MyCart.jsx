@@ -24,7 +24,7 @@ const MyCart = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              const remainingUsers = loadData.filter((load) => load._id === id);
+              const remainingUsers = loadData.filter((load) => load._id !== id);
               setLoadData(remainingUsers);
               Swal.fire({
                 title: "Deleted!",
@@ -40,7 +40,7 @@ const MyCart = () => {
   return (
     <div>
       <h1 className="text-5xl ml-32 font-bold mt-8">
-        Your Cart {carts.length}
+        Your Cart {loadData.length}
       </h1>
       <div className="mt-8 flex flex-wrap gap-10 items-center justify-center">
         {loadData.map((cart, idx) => (
