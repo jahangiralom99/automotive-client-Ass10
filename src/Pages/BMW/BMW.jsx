@@ -5,8 +5,9 @@ const BMW = () => {
   const filterCars = cars.filter((car) => car.brandName === "BMW");
 
   return (
-    <div className="mt-12">
-      <div  className="grid grid-cols-1 md:grid-cols-1 gap-8 items-center justify-items-center">
+      <div className="mt-12">
+           <h1 className="text-4xl font-bold text-center">BMW Car</h1>
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-1 gap-8 items-center justify-items-center">
         {filterCars.map((car) => (
             <div
                 data-aos="slide-up"
@@ -22,8 +23,8 @@ const BMW = () => {
               <p className="font-bold">{car.type}</p>
               <p className="font-bold">Price :{car.price}$</p>
               <div className="card-actions ">
-                <Link to={`/bmwUpdate/${car._id}`} className="btn btn-outline">Update </Link>
-                <Link to={`/bmw/${car._id}`} className="btn btn-outline">View Details</Link>
+                <Link to={`/Update/${car._id}`} className="btn btn-outline">Update </Link>
+                <Link to={`/details/${car._id}`} className="btn btn-outline">View Details</Link>
               </div>
             </div>
           </div>

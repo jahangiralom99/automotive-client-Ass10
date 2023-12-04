@@ -12,12 +12,16 @@ import Tesla from "../Pages/Tesla/Tesla";
 import Ford from "../Pages/Ford/Ford";
 import MercedesBenz from "../Pages/MercedesBenz/MercedesBenz";
 import Lamborghini from "../Pages/Lamborghini/Lamborghini";
+import UpdateCar from "../Pages/UpdateCar/UpdateCar";
+import DetailsCar from "../Pages/DetailsCar/DetailsCar";
+import ErrPage from "../Pages/ErrPage/ErrPage";
 
 
 const Router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrPage></ErrPage>,
         children: [
             {
                 path: '/',
@@ -54,16 +58,30 @@ const Router = createBrowserRouter([
                 loader: () => fetch('http://localhost:3000/cars')
             },
             {
+                path: "/Update/:id",
+                element: <UpdateCar></UpdateCar>,
+                loader: ({params})=> fetch(`http://localhost:3000/cars/${params.id}`),
+            },
+            {
+                path: "/details/:id",
+                element: <DetailsCar></DetailsCar>,
+                loader: ({params})=> fetch(`http://localhost:3000/cars/${params.id}`),
+            }
+            ,
+            
+            {
                 path: '/addProducts',
                 element: <PrivetRoute><AddProducts></AddProducts></PrivetRoute>,
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>
+                element: <MyCart></MyCart>,
+                loader: () => fetch('http://localhost:3000/carts')
             },
             {
                 path: '/login',
-                element: <Login></Login>
+                element: <Login></Login>,
+
             },
             {
                 path: '/register',

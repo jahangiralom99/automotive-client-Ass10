@@ -7,7 +7,7 @@ const Banner = () => {
             className="hero "
             style={{
               backgroundImage:
-                "url(https://i.ibb.co/3WsZpnV/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg)",
+                "url(https://i.postimg.cc/rF4FgvZC/banner1-500-1.webp)",
             }}
           >
             <div className="hero-overlay"></div>
@@ -35,7 +35,7 @@ const Banner = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/JBTsTg2/paul-kansonkho-f-Dv-Byj8ms3k-unsplash.jpg"
+            src="https://i.postimg.cc/7ZFzmFkg/banner6-500.webp"
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -49,7 +49,7 @@ const Banner = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/3FvZWLt/john-matychuk-Fg-Tcok-Jpm9w-unsplash.jpg"
+            src="https://i.postimg.cc/Qt0k4fSh/banner-3-500.webp"
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -63,7 +63,7 @@ const Banner = () => {
         </div>
         <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/47XYkMR/christian-wiediger-O84-b-Ye3id-Q-unsplash.jpg"
+            src="https://i.postimg.cc/sgbTRHpc/banner4-500.webp"
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
