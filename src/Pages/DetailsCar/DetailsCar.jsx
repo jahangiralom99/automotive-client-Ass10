@@ -17,7 +17,7 @@ const DetailsCar = () => {
   const cart = { car };
 
   const addToCard = () => {
-    fetch(`http://localhost:3000/carts`, {
+    fetch(`https://automotive-server-asss-m10.vercel.app/carts`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

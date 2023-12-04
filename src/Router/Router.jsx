@@ -17,84 +17,100 @@ import DetailsCar from "../Pages/DetailsCar/DetailsCar";
 import ErrPage from "../Pages/ErrPage/ErrPage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 
-
 const Router = createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout></MainLayout>,
-        errorElement: <ErrPage></ErrPage>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>,
-            },
-            {
-                path: '/BMW',
-                element: <BMW></BMW>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: '/toyota',
-                element: <Toyota></Toyota>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: '/tesla',
-                element: <Tesla></Tesla>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: '/ford',
-                element: <Ford></Ford>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: '/mercedes',
-                element: <MercedesBenz></MercedesBenz>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: '/lamborghini',
-                element: <Lamborghini></Lamborghini>,
-                loader: () => fetch('http://localhost:3000/cars')
-            },
-            {
-                path: "/Update/:id",
-                element: <UpdateCar></UpdateCar>,
-                loader: ({params})=> fetch(`http://localhost:3000/cars/${params.id}`),
-            },
-            {
-                path: "/details/:id",
-                element: <DetailsCar></DetailsCar>,
-                loader: ({params})=> fetch(`http://localhost:3000/cars/${params.id}`),
-            }
-            ,
-            
-            {
-                path: '/addProducts',
-                element: <PrivetRoute><AddProducts></AddProducts></PrivetRoute>,
-            },
-            {
-                path: '/myCart',
-                element: <PrivetRoute><MyCart></MyCart></PrivetRoute>,
-                loader: () => fetch('http://localhost:3000/carts')
-            },
-            {
-                path: '/about',
-                element: <AboutUs></AboutUs>,
-            },
-            {
-                path: '/login',
-                element: <Login></Login>,
-
-            },
-            {
-                path: '/register',
-                element: <Register></Register>
-            }
-            
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrPage></ErrPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/BMW",
+        element: <BMW></BMW>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/toyota",
+        element: <Toyota></Toyota>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/tesla",
+        element: <Tesla></Tesla>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/ford",
+        element: <Ford></Ford>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/mercedes",
+        element: <MercedesBenz></MercedesBenz>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/lamborghini",
+        element: <Lamborghini></Lamborghini>,
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+      },
+      {
+        path: "/Update/:id",
+        element: <UpdateCar></UpdateCar>,
+        loader: ({ params }) =>
+          fetch(
+            `https://automotive-server-asss-m10.vercel.app/cars/${params.id}`
+          ),
+      },
+      {
+        path: "/details/:id",
+        element: <DetailsCar></DetailsCar>,
+        loader: ({ params }) =>
+          fetch(
+            `https://automotive-server-asss-m10.vercel.app/cars/${params.id}`
+          ),
+      },
+      {
+        path: "/addProducts",
+        element: (
+          <PrivetRoute>
+            <AddProducts></AddProducts>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myCart",
+        element: (
+          <PrivetRoute>
+            <MyCart></MyCart>
+          </PrivetRoute>
+        ),
+        loader: () =>
+          fetch("https://automotive-server-asss-m10.vercel.app/carts"),
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 
 export default Router;

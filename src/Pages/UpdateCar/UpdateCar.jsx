@@ -4,14 +4,13 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateCar = () => {
+  const navigate = useNavigate();
+  const car = useLoaderData();
 
-    const navigate = useNavigate()
-    const car = useLoaderData();
+  const { name, brandName, price, description, rating, type, photo, _id } =
+    car || {};
 
-    const {name, brandName, price, description, rating, type, photo,  _id, 
-    } = car || {}; 
-
-    // console.log(car);
+  // console.log(car);
 
   const handleUpdateBtn = (e) => {
     e.preventDefault();
@@ -32,32 +31,32 @@ const UpdateCar = () => {
       rating,
       type,
       photo,
-      };
-      fetch(`http://localhost:3000/cars/${_id}`, {
-          method: "PUT",
-          headers: {
-              "content-type": "application/json"
-          },
-          body: JSON.stringify(allCarsInfo)
-      })
-          .then(res => res.json())
-          .then(data => {
-              console.log(data);
-              if (data.modifiedCount > 0) {
-                Swal.fire({
-                    title: "success!",
-                    text: "coffee Update successfully",
-                    icon: "success",
-                    confirmButtonText: "ok",
-                  });
-              }
-        })
+    };
+    fetch(`https://automotive-server-asss-m10.vercel.app/cars/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(allCarsInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "success!",
+            text: "coffee Update successfully",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+      });
   };
 
-    const handleGoBAck = () => {
-        navigate(-1)
-    } 
-    
+  const handleGoBAck = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="mt-12">
       <div className="bg-[#F4F3F0] p-4">
@@ -68,12 +67,13 @@ const UpdateCar = () => {
             <div className="md:flex gap-8">
               <label className="form-control md:w-1/2 ">
                 <div className="label">
-                                  <span className="label-text font-bold">Name {name}</span>
+                  <span className="label-text font-bold">Name {name}</span>
                 </div>
                 <input
                   type="text"
                   placeholder="name"
-                  name="name" defaultValue={name}
+                  name="name"
+                  defaultValue={name}
                   className="input input-bordered  w-full "
                 />
               </label>
@@ -84,7 +84,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   placeholder="Brand Name"
-                  name="brandName" defaultValue={brandName}
+                  name="brandName"
+                  defaultValue={brandName}
                   className="input input-bordered w-full "
                 />
               </label>
@@ -98,7 +99,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   placeholder="Price"
-                  name="price" defaultValue={price}
+                  name="price"
+                  defaultValue={price}
                   className="input input-bordered  w-full "
                 />
               </label>
@@ -111,7 +113,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   placeholder="description"
-                  name="description" defaultValue={description}
+                  name="description"
+                  defaultValue={description}
                   className="input input-bordered w-full "
                 />
               </label>
@@ -125,7 +128,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   placeholder="Rating"
-                  name="rating" defaultValue={rating}
+                  name="rating"
+                  defaultValue={rating}
                   className="input input-bordered  w-full "
                 />
               </label>
@@ -136,7 +140,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   name="type"
-                  placeholder="Type" defaultValue={type}
+                  placeholder="Type"
+                  defaultValue={type}
                   className="input input-bordered w-full "
                 />
               </label>
@@ -149,7 +154,8 @@ const UpdateCar = () => {
                 <input
                   type="text"
                   placeholder="photo URL"
-                  name="photo" defaultValue={photo}
+                  name="photo"
+                  defaultValue={photo}
                   className="input input-bordered w-full "
                 />
               </label>
@@ -160,8 +166,13 @@ const UpdateCar = () => {
             value="Update Now"
             className="font-bold text-red-500 btn btn-outline w-full"
           />
-              </form>
-              <button onClick={handleGoBAck} className="mt-6 font-bold text-red-500 btn btn-outline w-full">Go Back</button>
+        </form>
+        <button
+          onClick={handleGoBAck}
+          className="mt-6 font-bold text-red-500 btn btn-outline w-full"
+        >
+          Go Back
+        </button>
       </div>
     </div>
   );
