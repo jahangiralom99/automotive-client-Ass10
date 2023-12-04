@@ -5,13 +5,12 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Header = () => {
-
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        toast.info('Logged Out!', {
+        toast.info("Logged Out!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -20,12 +19,12 @@ const Header = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   const navLinks = (
     <>
@@ -57,6 +56,16 @@ const Header = () => {
           }
         >
           My Cart
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          About Us
         </NavLink>
       </li>
     </>
@@ -98,11 +107,12 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 font-bold">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          {
-            !user ?<button className="btn btn-link">
-            <Link to="/login">Login</Link>
-            </button> :
-              <div className="dropdown dropdown-end">
+          {!user ? (
+            <button className="btn btn-link">
+              <Link to="/login">Login</Link>
+            </button>
+          ) : (
+            <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -111,7 +121,7 @@ const Header = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user.photoURL}
                   />
                 </div>
               </div>
@@ -120,22 +130,18 @@ const Header = () => {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                  </a>
+                  <a className="justify-between">{user?.displayName}</a>
                 </li>
+                <li>{user.email}</li>
                 <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                    <button onClick={handleLogOut}
-                    className="btn btn-link"
-                    >Logout</button>
+                  <button onClick={handleLogOut} className="btn btn-link">
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>
-          }
-          
+          )}
+
           {/* <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -168,7 +174,6 @@ const Header = () => {
           </div> */}
         </div>
       </div>
-      
     </div>
   );
 };

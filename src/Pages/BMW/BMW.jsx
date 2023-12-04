@@ -16,7 +16,7 @@ const BMW = () => {
             className="card flex-col md:flex-row card-side bg-base-100 shadow-xl"
           >
             <figure>
-              <img className="md:w-[500px]" src={car.photo} alt="Movie" />
+              <img className="md:w-[500px] md:h-72" src={car.photo} alt="Movie" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{car.name}</h2>

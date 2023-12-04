@@ -15,6 +15,7 @@ import Lamborghini from "../Pages/Lamborghini/Lamborghini";
 import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 import DetailsCar from "../Pages/DetailsCar/DetailsCar";
 import ErrPage from "../Pages/ErrPage/ErrPage";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 
 const Router = createBrowserRouter([
@@ -75,8 +76,12 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>,
+                element: <PrivetRoute><MyCart></MyCart></PrivetRoute>,
                 loader: () => fetch('http://localhost:3000/carts')
+            },
+            {
+                path: '/about',
+                element: <AboutUs></AboutUs>,
             },
             {
                 path: '/login',

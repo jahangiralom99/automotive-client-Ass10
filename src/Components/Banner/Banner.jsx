@@ -15,12 +15,14 @@ const Banner = () => {
               <div className="max-w-md">
                 <h1 className="mb-5 text-5xl font-bold">Chevrolet Camaro</h1>
                 <p className="mb-5">
-                  <span className="font-bold">6.2L LT1 V8 ENGINE</span> <br /> With Direct Injection, Variable Valve
-                  Timing and, on the 8-speed automatic, Active Fuel
-                  ManagementTM, it offers efficiency when you want it, power
-                  when you need it.
+                  <span className="font-bold">6.2L LT1 V8 ENGINE</span> <br />{" "}
+                  With Direct Injection, Variable Valve Timing and, on the
+                  8-speed automatic, Active Fuel ManagementTM, it offers
+                  efficiency when you want it, power when you need it.
                 </p>
-                <button className="btn btn-link btn-outline btn-active">More Info</button>
+                <button className="btn btn-link btn-outline btn-active">
+                  More Info
+                </button>
               </div>
             </div>
           </div>

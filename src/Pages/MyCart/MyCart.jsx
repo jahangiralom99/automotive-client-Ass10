@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
   const carts = useLoaderData();
-  const [loadData, setLoadData] =useState(carts)
+  const [loadData, setLoadData] = useState(carts);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -24,8 +24,8 @@ const MyCart = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              const remainingUsers = loadData.filter(load => load._id === id);
-              setLoadData(remainingUsers)
+              const remainingUsers = loadData.filter((load) => load._id === id);
+              setLoadData(remainingUsers);
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
@@ -47,7 +47,7 @@ const MyCart = () => {
           <div key={idx}>
             <div className="card bg-base-100 shadow-lg">
               <figure>
-                <img className="w-96" src={cart?.car.photo} alt="Shoes" />
+                <img className="w-96 h-52" src={cart?.car.photo} alt="Shoes" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{cart?.car.name}</h2>
