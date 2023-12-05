@@ -13,7 +13,7 @@ const MainLayout = () => {
   return (
     <div
       data-theme={`${hide ? "light" : "dark"}`}
-      className="max-w-screen-xl mx-auto px-2"
+      className="px-2"
     >
       <Header></Header>
       <div
