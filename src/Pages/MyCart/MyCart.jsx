@@ -39,7 +39,7 @@ const MyCart = () => {
 
   return (
     <div>
-      <h1 className="text-5xl ml-32 font-bold mt-8">
+      <h1 className="text-5xl font-bold mt-8">
         Your Cart {loadData.length}
       </h1>
       <div className="mt-8 flex flex-wrap gap-10 items-center justify-center">

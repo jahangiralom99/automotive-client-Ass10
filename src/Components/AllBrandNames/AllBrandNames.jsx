@@ -1,32 +1,31 @@
 import { useNavigate } from "react-router-dom";
 
 const AllBrandNames = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleBMW = () => {
-    navigate('/BMW')
-  }
+    navigate("/BMW");
+  };
 
   const handleToyota = () => {
-    navigate('/toyota')
-  }
+    navigate("/toyota");
+  };
 
   const handleTesla = () => {
-    navigate("/tesla")
-  }
+    navigate("/tesla");
+  };
 
   const handleFord = () => {
-    navigate("/ford")
-  }
+    navigate("/ford");
+  };
 
   const handleMercedes = () => {
-    navigate("/mercedes") 
-  }
+    navigate("/mercedes");
+  };
 
   const handleLamborghini = () => {
-    navigate("/lamborghini")
-  }
+    navigate("/lamborghini");
+  };
 
   return (
     <div data-aos="zoom-in">
@@ -34,7 +33,10 @@ const AllBrandNames = () => {
       <div data-aos="slide-up" className="">
         <div className="grid  md:grid-cols-2 items-center justify-items-center mt-12 gap-10">
           {/* 1 number */}
-          <div onClick={handleBMW} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            onClick={handleBMW}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%] "
@@ -49,7 +51,11 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 2 nd */}
-          <div data-aos="slide-up" onClick={handleToyota} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            data-aos="slide-up"
+            onClick={handleToyota}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%]"
@@ -64,7 +70,11 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 3rd */}
-          <div data-aos="slide-up" onClick={handleTesla} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            data-aos="slide-up"
+            onClick={handleTesla}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%]"
@@ -79,7 +89,11 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 4th */}
-          <div data-aos="slide-up" onClick={handleFord} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            data-aos="slide-up"
+            onClick={handleFord}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%]"
@@ -94,7 +108,11 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 5th */}
-          <div data-aos="slide-up" onClick={handleMercedes} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            data-aos="slide-up"
+            onClick={handleMercedes}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%]"
@@ -109,7 +127,11 @@ const AllBrandNames = () => {
             </div>
           </div>
           {/* 6th */}
-          <div data-aos="slide-up" onClick={handleLamborghini} className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110">
+          <div
+            data-aos="slide-up"
+            onClick={handleLamborghini}
+            className="card  image-full border rounded-lg transform transition duration-500 hover:scale-110"
+          >
             <figure>
               <img
                 className="w-[100%]"
