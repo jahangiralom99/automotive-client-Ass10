@@ -51,7 +51,7 @@ const AddProducts = () => {
 
   return (
     <div className="mt-12">
-      <div className="bg-[#F4F3F0] p-4">
+      <div className=" p-4">
         <h1 className="text-4xl font-bold text-center">Add Car</h1>
         <form onSubmit={handleUpdateBtn}>
           <div className="mt-12">

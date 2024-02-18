@@ -72,7 +72,7 @@ const Header = () => {
   );
 
   return (
-    <div className="">
+    <div className="sticky top-0 z-50">
       <div className="navbar bg-base-200 rounded-md">
         <div className="navbar-start">
           <div className="dropdown">

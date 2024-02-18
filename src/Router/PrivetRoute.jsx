@@ -9,7 +9,7 @@ const PrivetRoute = ({ children }) => {
 
     const location = useLocation();
 
-    if ( loading) {
+    if (loading) {
         return <h1 className="text-5xl font-bold flex h-screen items-center justify-center"><span className="loading loading-spinner text-error w-40"></span></h1>
     }
 
@@ -24,6 +24,5 @@ const PrivetRoute = ({ children }) => {
 PrivetRoute.propTypes = {
     children: PropTypes.node.isRequired,
 }
-
 
 export default PrivetRoute;

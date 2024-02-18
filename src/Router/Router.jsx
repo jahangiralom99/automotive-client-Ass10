@@ -6,16 +6,11 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivetRoute from "./PrivetRoute";
-import BMW from "../Pages/BMW/BMW";
-import Toyota from "../Pages/Toyota/Toyota";
-import Tesla from "../Pages/Tesla/Tesla";
-import Ford from "../Pages/Ford/Ford";
-import MercedesBenz from "../Pages/MercedesBenz/MercedesBenz";
-import Lamborghini from "../Pages/Lamborghini/Lamborghini";
 import UpdateCar from "../Pages/UpdateCar/UpdateCar";
 import DetailsCar from "../Pages/DetailsCar/DetailsCar";
 import ErrPage from "../Pages/ErrPage/ErrPage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import BrandNameCard from "../Pages/BrandNameCard/BrandNameCard";
 
 const Router = createBrowserRouter([
   {
@@ -28,40 +23,10 @@ const Router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/BMW",
-        element: <BMW></BMW>,
+        path: "/brand/:brandName",
+        element: <BrandNameCard />,
         loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
-      },
-      {
-        path: "/toyota",
-        element: <Toyota></Toyota>,
-        loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
-      },
-      {
-        path: "/tesla",
-        element: <Tesla></Tesla>,
-        loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
-      },
-      {
-        path: "/ford",
-        element: <Ford></Ford>,
-        loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
-      },
-      {
-        path: "/mercedes",
-        element: <MercedesBenz></MercedesBenz>,
-        loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
-      },
-      {
-        path: "/lamborghini",
-        element: <Lamborghini></Lamborghini>,
-        loader: () =>
-          fetch("https://automotive-server-asss-m10.vercel.app/cars"),
+        fetch("https://automotive-server-asss-m10.vercel.app/cars"),
       },
       {
         path: "/Update/:id",

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "brandName": "BMW",
+    "category": "BMW",
+    "image": "https://i.postimg.cc/50JbmHKK/bmwlogo-500.webp"
+  },
+  {
+    "id": 2,
+    "brandName": "Toyota",
+    "category": "Toyota",
+    "image": "https://i.postimg.cc/kgVb0ZM3/toyota-500.webp"
+  },
+  {
+    "id": 3,
+    "brandName": "Tesla",
+    "category": "Tesla",
+    "image": "https://i.postimg.cc/jj6PcF4H/tesla-500.webp"
+  },
+  {
+    "id": 4,
+    "brandName": "Ford",
+    "category": "Ford",
+    "image": "https://i.postimg.cc/26C3SXY5/Ford-450.webp"
+  },
+  {
+    "id": 5,
+    "brandName": "Mercedes",
+    "category": "Mercedes",
+    "image": "https://i.postimg.cc/K8J0f4cc/mercedes-450.webp"
+  },
+  {
+    "id": 6,
+    "brandName": "Lamborghini",
+    "category": "Lamborghini",
+    "image": "https://i.postimg.cc/ZRhvyxkW/lambor-500.webp"
+  }
+]
